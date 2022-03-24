@@ -12,3 +12,5 @@
 Discord : 카서#0397
 
 Discord Server : https://discord.gg/b6qaHbg6PE
+
+** 경고 한번에 너무 많은 사람이 명령어 실행시 아이피밴을 먹을 수 있음 **
