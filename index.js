@@ -2,8 +2,8 @@ const axios = require(`axios`).default;
 const fs = require(`fs`);
 const crypto = require(`crypto`);
 const discord = require(`discord.js`);
-const roleIDList = ["949954863020781588", "949959332836032522"];
-const evalstaff = ["927626007710662676"];
+const roleIDList = [];
+const evalstaff = [];
 const client = new discord.Client({
     intents: new discord.Intents(32767)
 });
