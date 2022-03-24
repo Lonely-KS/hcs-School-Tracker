@@ -6,5 +6,6 @@
 자꾸 출처 안남기면 내림 ㅅㄱ;
 달러늅꺼 좀 빼낌 ㅎㅎ ㄳ;
 
-Discord : 카서#0397
+Discord : 카서#
+
 Discord Server : https://discord.gg/b6qaHbg6PE
