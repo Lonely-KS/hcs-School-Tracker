@@ -9,7 +9,7 @@ const client = new discord.Client({
 });
 const cityCodes = {"서울특별시": "sen", "부산광역시": "pen", "대구광역시": "dge", "인천광역시": "ice", "광주광역시": "gen", "대전광역시": "dje", "울산광역시": "use", "세종특별자치시": "sje", "경기도": "goe", "강원도": "kwe", "충청북도": "cbe", "충청남도": "cne", "전라북도": "jbe", "전라남도": "jne", "경상북도": "gbe", "경상남도": "gne", "제주특별자치도": "jje"};
 const cityNumCodes = {"서울특별시": "01", "부산광역시": "02", "대구광역시": "03", "인천광역시": "04", "광주광역시": "05", "대전광역시": "06", "울산광역시": "07", "세종특별자치시": "08", "경기도": "10", "강원도": "11", "충청북도": "12", "충청남도": "13", "전라북도": "14", "전라남도": "15", "경상북도": "16", "경상남도": "17", "제주특별자치도": "18"};
-const TOKEN = "ODkyNzk2Mjc2NDM1OTk2NzIz.YVSHUw.qhzn964gNoQ8ChDhUmBr6-CiWMg";
+const TOKEN = "";
 
 client.on(`ready`, () => {
     console.log(`Logged in as ${client.user.tag}`);
