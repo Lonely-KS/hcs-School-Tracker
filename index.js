@@ -10,6 +10,7 @@ const client = new discord.Client({
 const cityCodes = {"서울특별시": "sen", "부산광역시": "pen", "대구광역시": "dge", "인천광역시": "ice", "광주광역시": "gen", "대전광역시": "dje", "울산광역시": "use", "세종특별자치시": "sje", "경기도": "goe", "강원도": "kwe", "충청북도": "cbe", "충청남도": "cne", "전라북도": "jbe", "전라남도": "jne", "경상북도": "gbe", "경상남도": "gne", "제주특별자치도": "jje"};
 const cityNumCodes = {"서울특별시": "01", "부산광역시": "02", "대구광역시": "03", "인천광역시": "04", "광주광역시": "05", "대전광역시": "06", "울산광역시": "07", "세종특별자치시": "08", "경기도": "10", "강원도": "11", "충청북도": "12", "충청남도": "13", "전라북도": "14", "전라남도": "15", "경상북도": "16", "경상남도": "17", "제주특별자치도": "18"};
 const TOKEN = "";
+let trackCheck = false;
 
 client.on(`ready`, () => {
     console.log(`Logged in as ${client.user.tag}`);
@@ -19,6 +20,8 @@ client.on(`ready`, () => {
 client.on(`messageCreate`, async (message) => {
     if (message.author.bot || message.channel == message.author.dmChannel) return;
     if (message.content.toLowerCase().startsWith(`!getschool `)) {
+        if (trackCheck) return await message.channel.send({embeds: [new discord.MessageEmbed().setTitle("❌ 이미 트래커를 사용중인 유저가 있습니다.").setColor("RED")]});
+        trackCheck = true;
         const name = message.content.split(" ")[1];
         const birth = message.content.split(" ")[2];
         var schoolLevel = birth.substring(0, 2);
@@ -83,9 +86,11 @@ client.on(`messageCreate`, async (message) => {
             if (taskSuccess) await message.channel.send({ embeds: [new discord.MessageEmbed().setTitle("✅ 트래킹 완료").setColor("GREEN").setDescription(`**${name}** 님의 정보를 ${taskSuccess}개 찾았습니다!`)] });
             else await message.channel.send({ embeds: [new discord.MessageEmbed().setTitle("❌ 트래킹 실패").setColor("RED").setDescription(`**${name}** 님의 정보를 찾지 못했습니다!`)] });
             await countEmbed.delete();
+            trackCheck = false;
         }
         else {
             await message.channel.send({embeds: [new discord.MessageEmbed().setTitle("❌ 생년월일을 다시 확인해 주세요!").setColor("RED")]});
+            trackCheck = false;
         }
     }
 
