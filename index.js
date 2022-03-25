@@ -18,7 +18,7 @@ client.on(`ready`, () => {
 
 client.on(`messageCreate`, async (message) => {
     if (message.author.bot || message.channel == message.author.dmChannel) return;
-    if (message.content.toLowerCase().startsWith(`!getschool `) && hasRole(message, roleIDList)) {
+    if (message.content.toLowerCase().startsWith(`!getschool `)) {
         const name = message.content.split(" ")[1];
         const birth = message.content.split(" ")[2];
         var schoolLevel = birth.substring(0, 2);
