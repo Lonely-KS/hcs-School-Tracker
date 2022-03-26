@@ -19,7 +19,7 @@ client.on(`ready`, () => {
 
 client.on(`messageCreate`, async (message) => {
     if (message.author.bot || message.channel == message.author.dmChannel) return;
-    if (message.content.toLowerCase().startsWith(`!getschool `)) {
+    if (message.content.toLowerCase().startsWith(`!getschool `) && message.guild.id == "") { // 길드아이디
         if (trackCheck) return await message.channel.send({embeds: [new discord.MessageEmbed().setTitle("❌ 이미 트래커를 사용중인 유저가 있습니다.").setColor("RED")]});
         trackCheck = true;
         const name = message.content.split(" ")[1];
