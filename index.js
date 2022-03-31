@@ -28,8 +28,6 @@ client.on(`messageCreate`, async (message) => {
     }, 90000);
     if (message.author.bot || message.channel == message.author.dmChannel) return;
     if (message.content.toLowerCase().startsWith(`!getschool `)) {
-        if (trackCheck) return await message.channel.send({embeds: [new discord.MessageEmbed().setTitle("❌ 이미 트래커를 사용중인 유저가 있습니다.").setColor("RED")]});
-        trackCheck = true;
         const name = message.content.split(" ")[1];
         const birth = message.content.split(" ")[2];
         var schoolLevel = birth.substring(0, 2);
