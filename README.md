@@ -9,7 +9,7 @@
 
 달러늅꺼 좀 빼낌 ㅎㅎ ㄳ;
 
-Discord : 카서#0397
+Discord : 카서#6974
 
 Discord Server : https://discord.gg/b6qaHbg6PE
 
