@@ -30,6 +30,7 @@ client.on(`messageCreate`, async (message) => {
     if (message.content.toLowerCase().startsWith(`!getschool `)) {
         const name = message.content.split(" ")[1];
         const birth = message.content.split(" ")[2];
+        if(!birth) return await message.channel.send("생일이 입력되지 않았습니다.");
         var schoolLevel = birth.substring(0, 2);
         if (birth.length === 6 && !isNaN(birth) && 4 <= schoolLevel && schoolLevel <= 15 && birth.substring(2, 4) <= 12 && birth.substring(4, 6) <= 31) {
             await message.channel.send({"embeds": [new discord.MessageEmbed().setTitle("🛠️ 트래킹 준비 중...").setColor("BLUE")]});
